@@ -1,0 +1,14 @@
+
+runtime: python39
+service: shortener
+
+entrypoint: python3 app.py
+
+env_variables:
+  SECRET_KEY: abcd1234
+  FLASK_ENV: development
+  DB_USER: admin1
+  DB_PASS: Adc%4022226666
+  DB_NAME: shortener-1
+  DB_SOCKET_DIR: /cloudsql
+  INSTANCE_CONNECTION_NAME: yacarthar1st:asia-southeast1:shortener-1

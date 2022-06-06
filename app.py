@@ -44,7 +44,6 @@ def shortener():
     )
     db.session.add(new_url)
     db.session.commit()
-    print(new_url.id)
 
     return jsonify({"input_data": url})
 
@@ -52,8 +51,6 @@ def shortener():
 def get_url(short_url):
     url = Url.query.filter_by(short_url=short_url).first()
     return jsonify({"full_url": url.url})
-
-
 
 
 if __name__ == "__main__":
