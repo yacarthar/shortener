@@ -1,10 +1,8 @@
-"""database model
+""" Url model
 """
 
 from datetime import datetime
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
+from .base import db
 
 class Url(db.Model):
     id = db.Column(db.Integer, primary_key=True)
