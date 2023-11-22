@@ -15,7 +15,6 @@ from config import app_config
 from models import db
 
 
-
 def create_app(config="dev"):
     app = Flask(__name__)
     app.logger.setLevel(logging.INFO)
@@ -31,10 +30,8 @@ def create_app(config="dev"):
     app.register_blueprint(shortener)
     return app
 
+
 app = create_app(os.getenv("CONFIG_NAME"))
-
-
-
 
 
 if __name__ == "__main__":

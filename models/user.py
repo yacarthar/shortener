@@ -8,13 +8,14 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from .base import db
 from libs.tools import cheap_uuid
 
+
 class User(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
-    public_id = db.Column(db.String(50), unique = True, default=cheap_uuid)
+    id = db.Column(db.Integer, primary_key=True)
+    public_id = db.Column(db.String(50), unique=True, default=cheap_uuid)
     name = db.Column(db.String(100))
-    email = db.Column(db.String(70), unique = True)
+    email = db.Column(db.String(70), unique=True)
     password = db.Column(db.String(250))
-    tokens = db.relationship('Token', cascade='all, delete, delete-orphan')
+    tokens = db.relationship("Token", cascade="all, delete, delete-orphan")
 
     def __init__(self, name, email, password):
         self.name = name
